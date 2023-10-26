@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color:rgb(220, 243, 220);
+        }
+        h1{
+        font-size: 300%;
+        text-align: center;
+        font-family:fantasy;
+        background-color: rgba(188, 141, 193, 0.469);
+        padding-top: 0px;
+         }
+         label{
+        font-size: 200%;
+        text-align: center;
+    }
+    #mydiv{
+        text-align: center;
+        border: solid;
+        border-width: 5px;
+        background-color: rgba(172, 159, 214, 0.375);
+    }
+    h3{
+        text-align: center;
+        padding-left: 25px;
+        padding-right: 25px;
+        background-color: rgba(230, 193, 193, 0.401);
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+
+    </style>
+    
+</head>
+<body>
+    <h1>Carbon Footprint Calculator</h1>
+    <h3>values to be entred in $</h3>
+    <div id="mydiv">
+    <label for="monthly electricity bill">monthly electricity bill</label>
+    <input type="number" id="m1" placeholder="enter monthly electricity bill">
+    <br>
+    <label for="monthly gas bill">monthly gas bill</label>
+    <input type="number" id="m2" placeholder="enter monthly gas bill">
+    <br>
+    <label for="monthly oil bill ">monthly oil bill </label>
+    <input type="number" id="m3" placeholder="enter monthly oil bill ">
+    <br>
+    <label for="car milage">car milage</label>
+    <input type="number" id="m4" placeholder="enter car milage">
+    <br>
+    
+    
+    <button onclick="calculateCarbonFootprint1()">Calculate</button>
+    <p id="result"></p>
+</div>
+<script>
+    function calculateCarbonFootprint1() {
+    var meb = parseFloat(document.getElementById("m1").value);
+    var mob = parseFloat(document.getElementById("m2").value);
+    var mgb = parseFloat(document.getElementById("m3").value);
+    var cm = parseFloat(document.getElementById("m4").value);
+
+    
+    var emissions = 0
+    var emissions=meb*105
+    var emissions=emissions+mob*105
+    var emissions=emissions+mgb*113
+    var emissions=emissions+cm*79
+    document.getElementById("result").innerHTML = "Carbon footprint: " + emissions + " pounds of CO2";
+
+
+
+
+}
+</script>
+    <h3>Keep in mind that an “ideal” carbon footprint (or a “low” footprint) is anywhere from 6,000 to 15,999 pounds per year. 16,000-22,000 is considered average. Under 6,000 is considered very low.</h3>
+</body>
+</html>
